@@ -37,7 +37,7 @@ my_sim_data <- function(
     items <- data.frame(
         item_id = seq_len(n_emo*n_relation),
         emotion = rep(c("happiness","anger","sadness"), n_relation),
-        relation_model = rep(c("CS", "ARd","ARs","EM","MP"), n_emo),
+        relational_model = rep(c("CS", "ARd","ARs","EM","MP"), n_emo),
         X_i = rep(c(1, 1, 0), n_relation),
         Y_i = rep(c(0, -0.5, 0.5, 0, 0), n_emo),
         O_0i = rnorm(n = 1800, mean = 0, sd = omega_0)
@@ -59,7 +59,7 @@ my_sim_data <- function(
         mutate(e_si = rnorm(nrow(.), mean = 0, sd = sigma),
                temperature = beta_0 + T_0s + O_0i + (beta_1 + T_1s) * X_i + (beta_2 + T_1s) * Y_i +
                    (beta_3 + T_1s)*(X_i*Y_i) + e_si) %>%
-        select(subj_id, item_id, emotion, X_i, relation_model, Y_i, temperature)
+        select(subj_id, item_id, emotion, X_i, relational_model, Y_i, temperature)
 }
 
 # simulate, analyze, and return a table of parameter estimates
