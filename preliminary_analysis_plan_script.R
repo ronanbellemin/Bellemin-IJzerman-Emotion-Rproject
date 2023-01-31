@@ -68,6 +68,8 @@ model1 <- lmer(temperature ~ C1_sadness + C2_sadness + C3_sadness + C4_sadness +
 
 summary(model1)
 
+# we'll check here the assumptions to run the model
+
 # retrieving p-values of each effect
 pvalues_model1 <- model1$p.value
 
@@ -124,6 +126,8 @@ model2 <- lmer(temperature ~ C1_anger + C2_anger + C3_anger + C4_anger + C5_ange
 
 summary(model2)
 
+# we'll check here the assumptions to run the model
+
 # retrieving p-values of each effect
 pvalues_model2 <- model2$p.value
 
@@ -179,6 +183,8 @@ model3 <- lmer(temperature ~ C1_happiness + C2_happiness + C3_happiness + C4_hap
                exploratory_df_anger)
 
 summary(model3)
+
+# we'll check here the assumptions to run the model
 
 # retrieving p-values of each effect
 pvalues_model3 <- model3$p.value
